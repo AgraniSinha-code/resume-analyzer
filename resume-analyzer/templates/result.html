@@ -1,0 +1,81 @@
+<html>
+<head>
+    <title>Resume Analyzer</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+</head>
+
+<body class="bg-light" style="font-family: Poppins;">
+
+<div class="container mt-5">
+    <div class="card shadow-lg p-4">
+
+        <h2 class="text-center text-primary mb-4">🚀 AI Resume Analyzer</h2>
+
+        <!-- Job Match -->
+        <div class="alert alert-info text-center">
+            <h4>You are <b>{{match_percent}}%</b> fit for <b>{{role}}</b> role</h4>
+        </div>
+        <h5>🎯 Job Match</h5>
+          <div class="progress mb-4" style="height: 20px;">
+          <div class="progress-bar bg-info" style="width: {{match_percent}}%;">
+        {{match_percent}}%
+           </div>
+               </div>
+
+        <!-- Resume Score -->
+        <h5 class="mb-2">📊 Resume Score: <b>{{score}}%</b></h5>
+
+        <div class="progress mb-4" style="height: 25px;">
+    <div class="progress-bar 
+        {% if score >= 80 %}bg-success
+        {% elif score >= 50 %}bg-warning
+        {% else %}bg-danger
+        {% endif %}"
+        style="width: {{score}}%;">
+        {{score}}%
+    </div>
+ </div>
+
+        <div class="row">
+            <!-- Skills Found -->
+            <div class="col-md-6">
+                <h5 class="text-success">✅ Skills Found</h5>
+                <ul class="list-group">
+                    {% for skill in skills %}
+                    <li class="list-group-item">{{skill}}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+
+            <!-- Missing Skills -->
+            <div class="col-md-6">
+                <h5 class="text-danger">❌ Missing Skills</h5>
+                <ul class="list-group">
+                    {% for skill in missing_skills %}
+                    <li class="list-group-item">{{skill}}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+
+        <!-- Suggestion -->
+        <div class="mt-4">
+            <h5 class="text-info">💡 Suggestion</h5>
+            <div class="alert alert-warning">
+                {{suggestion}}
+            </div>
+        </div>
+
+        <!-- Button -->
+        <div class="text-center mt-4">
+            <a href="/" class="btn btn-primary px-4">Analyze Another Resume</a>
+        </div>
+
+    </div>
+</div>
+
+</body>
+</html>
