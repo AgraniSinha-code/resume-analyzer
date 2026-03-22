@@ -30,14 +30,15 @@ python app.py
 4. Open in browser:
 http://127.0.0.1:5000/
 
-📁 Project Structure
+## 📁 Project Structure
 
 resume-analyzer/
-│── app.py
-│── home.png
-│── result.png
-│── README.md
-|
+│
+├── app.py
+├── home.png
+├── result.png
+├── README.md
+│
 ├── templates/
 │ ├── index.html
 │ └── result.html
