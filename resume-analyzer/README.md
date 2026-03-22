@@ -32,17 +32,17 @@ http://127.0.0.1:5000/
 
 📁 Project Structure
 
-resume-analyzer/
+resume-analyzer
 │── app.py
 │── home.png
 │── result.png
 │── README.md
 │
-├── templates/
+├── templates
 │ ├── index.html
 │ └── result.html
 │
-└── static/
+└── static
 
 ## 📸 Screenshots
 
